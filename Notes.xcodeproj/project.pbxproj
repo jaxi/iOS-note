@@ -19,6 +19,10 @@
 		A1809BFF1958965F002B4F87 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1809BE71958965F002B4F87 /* UIKit.framework */; };
 		A1809C071958965F002B4F87 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A1809C051958965F002B4F87 /* InfoPlist.strings */; };
 		A1809C091958965F002B4F87 /* NotesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A1809C081958965F002B4F87 /* NotesTests.m */; };
+		A1809C1319589681002B4F87 /* Notes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1809C1219589681002B4F87 /* Notes.storyboard */; };
+		A1809C171958984F002B4F87 /* NoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1809C161958984F002B4F87 /* NoteViewController.m */; };
+		A1809C1B19589C3A002B4F87 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = A1809C1A19589C3A002B4F87 /* Note.m */; };
+		A1809C1E19589EF3002B4F87 /* NotesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1809C1D19589EF3002B4F87 /* NotesTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +52,13 @@
 		A1809C041958965F002B4F87 /* NotesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NotesTests-Info.plist"; sourceTree = "<group>"; };
 		A1809C061958965F002B4F87 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A1809C081958965F002B4F87 /* NotesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotesTests.m; sourceTree = "<group>"; };
+		A1809C1219589681002B4F87 /* Notes.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Notes.storyboard; sourceTree = "<group>"; };
+		A1809C151958984F002B4F87 /* NoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteViewController.h; sourceTree = "<group>"; };
+		A1809C161958984F002B4F87 /* NoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteViewController.m; sourceTree = "<group>"; };
+		A1809C1919589C3A002B4F87 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
+		A1809C1A19589C3A002B4F87 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
+		A1809C1C19589EF3002B4F87 /* NotesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotesTableViewController.h; sourceTree = "<group>"; };
+		A1809C1D19589EF3002B4F87 /* NotesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotesTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,10 +118,13 @@
 		A1809BE91958965F002B4F87 /* Notes */ = {
 			isa = PBXGroup;
 			children = (
+				A1809C1819589C20002B4F87 /* Models */,
+				A1809C14195897F8002B4F87 /* Controllers */,
 				A1809BF21958965F002B4F87 /* AppDelegate.h */,
 				A1809BF31958965F002B4F87 /* AppDelegate.m */,
 				A1809BF51958965F002B4F87 /* Images.xcassets */,
 				A1809BEA1958965F002B4F87 /* Supporting Files */,
+				A1809C1219589681002B4F87 /* Notes.storyboard */,
 			);
 			path = Notes;
 			sourceTree = "<group>";
@@ -142,6 +156,26 @@
 				A1809C051958965F002B4F87 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A1809C14195897F8002B4F87 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A1809C151958984F002B4F87 /* NoteViewController.h */,
+				A1809C161958984F002B4F87 /* NoteViewController.m */,
+				A1809C1C19589EF3002B4F87 /* NotesTableViewController.h */,
+				A1809C1D19589EF3002B4F87 /* NotesTableViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		A1809C1819589C20002B4F87 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A1809C1919589C3A002B4F87 /* Note.h */,
+				A1809C1A19589C3A002B4F87 /* Note.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,6 +255,7 @@
 			files = (
 				A1809BEE1958965F002B4F87 /* InfoPlist.strings in Resources */,
 				A1809BF61958965F002B4F87 /* Images.xcassets in Resources */,
+				A1809C1319589681002B4F87 /* Notes.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,7 +275,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1809BF41958965F002B4F87 /* AppDelegate.m in Sources */,
+				A1809C171958984F002B4F87 /* NoteViewController.m in Sources */,
 				A1809BF01958965F002B4F87 /* main.m in Sources */,
+				A1809C1E19589EF3002B4F87 /* NotesTableViewController.m in Sources */,
+				A1809C1B19589C3A002B4F87 /* Note.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
