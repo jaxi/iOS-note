@@ -55,4 +55,14 @@
     [self.presentingViewController dismissViewControllerAnimated:YES completion:NULL];
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"NotePreview"]) {
+        MarkdownPreviewController *mpc = (MarkdownPreviewController *)segue.destinationViewController;
+        
+        [mpc setHtmlContentWithMarkdownContent:self.noteContent.text];
+        mpc.title = self.noteTitle.text;
+    }
+}
+
 @end

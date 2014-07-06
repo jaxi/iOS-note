@@ -23,6 +23,18 @@
 		A1809C171958984F002B4F87 /* NoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1809C161958984F002B4F87 /* NoteViewController.m */; };
 		A1809C1B19589C3A002B4F87 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = A1809C1A19589C3A002B4F87 /* Note.m */; };
 		A1809C1E19589EF3002B4F87 /* NotesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1809C1D19589EF3002B4F87 /* NotesTableViewController.m */; };
+		A1925E561969D15B005738B6 /* BaseFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A1925E451969D15B005738B6 /* BaseFragment.m */; };
+		A1925E571969D15B005738B6 /* BlankLineFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A1925E471969D15B005738B6 /* BlankLineFragment.m */; };
+		A1925E581969D15B005738B6 /* HeadingFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A1925E491969D15B005738B6 /* HeadingFragment.m */; };
+		A1925E591969D15B005738B6 /* HorizontalFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A1925E4B1969D15B005738B6 /* HorizontalFragment.m */; };
+		A1925E5A1969D15B005738B6 /* ParagraphFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A1925E4D1969D15B005738B6 /* ParagraphFragment.m */; };
+		A1925E5B1969D15B005738B6 /* LinedHeadingFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A1925E4F1969D15B005738B6 /* LinedHeadingFragment.m */; };
+		A1925E5C1969D15B005738B6 /* TextFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A1925E511969D15B005738B6 /* TextFragment.m */; };
+		A1925E5D1969D15B005738B6 /* Fragments.m in Sources */ = {isa = PBXBuildFile; fileRef = A1925E531969D15B005738B6 /* Fragments.m */; };
+		A1925E5E1969D15B005738B6 /* ListFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A1925E551969D15B005738B6 /* ListFragment.m */; };
+		A197C7211969BC5E004370AD /* MarkdownPreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A197C7201969BC5E004370AD /* MarkdownPreviewController.m */; };
+		A197C7441969C254004370AD /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = A197C7411969C254004370AD /* Document.m */; };
+		A197C7451969C254004370AD /* Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = A197C7431969C254004370AD /* Parser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +71,30 @@
 		A1809C1A19589C3A002B4F87 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
 		A1809C1C19589EF3002B4F87 /* NotesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotesTableViewController.h; sourceTree = "<group>"; };
 		A1809C1D19589EF3002B4F87 /* NotesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotesTableViewController.m; sourceTree = "<group>"; };
+		A1925E441969D15B005738B6 /* BaseFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseFragment.h; sourceTree = "<group>"; };
+		A1925E451969D15B005738B6 /* BaseFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseFragment.m; sourceTree = "<group>"; };
+		A1925E461969D15B005738B6 /* BlankLineFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlankLineFragment.h; sourceTree = "<group>"; };
+		A1925E471969D15B005738B6 /* BlankLineFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlankLineFragment.m; sourceTree = "<group>"; };
+		A1925E481969D15B005738B6 /* HeadingFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeadingFragment.h; sourceTree = "<group>"; };
+		A1925E491969D15B005738B6 /* HeadingFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeadingFragment.m; sourceTree = "<group>"; };
+		A1925E4A1969D15B005738B6 /* HorizontalFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalFragment.h; sourceTree = "<group>"; };
+		A1925E4B1969D15B005738B6 /* HorizontalFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizontalFragment.m; sourceTree = "<group>"; };
+		A1925E4C1969D15B005738B6 /* ParagraphFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParagraphFragment.h; sourceTree = "<group>"; };
+		A1925E4D1969D15B005738B6 /* ParagraphFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParagraphFragment.m; sourceTree = "<group>"; };
+		A1925E4E1969D15B005738B6 /* LinedHeadingFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinedHeadingFragment.h; sourceTree = "<group>"; };
+		A1925E4F1969D15B005738B6 /* LinedHeadingFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinedHeadingFragment.m; sourceTree = "<group>"; };
+		A1925E501969D15B005738B6 /* TextFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFragment.h; sourceTree = "<group>"; };
+		A1925E511969D15B005738B6 /* TextFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFragment.m; sourceTree = "<group>"; };
+		A1925E521969D15B005738B6 /* Fragments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fragments.h; sourceTree = "<group>"; };
+		A1925E531969D15B005738B6 /* Fragments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fragments.m; sourceTree = "<group>"; };
+		A1925E541969D15B005738B6 /* ListFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListFragment.h; sourceTree = "<group>"; };
+		A1925E551969D15B005738B6 /* ListFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListFragment.m; sourceTree = "<group>"; };
+		A197C71F1969BC5E004370AD /* MarkdownPreviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarkdownPreviewController.h; sourceTree = "<group>"; };
+		A197C7201969BC5E004370AD /* MarkdownPreviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarkdownPreviewController.m; sourceTree = "<group>"; };
+		A197C7401969C254004370AD /* Document.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Document.h; sourceTree = "<group>"; };
+		A197C7411969C254004370AD /* Document.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Document.m; sourceTree = "<group>"; };
+		A197C7421969C254004370AD /* Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parser.h; sourceTree = "<group>"; };
+		A197C7431969C254004370AD /* Parser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Parser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +154,7 @@
 		A1809BE91958965F002B4F87 /* Notes */ = {
 			isa = PBXGroup;
 			children = (
+				A197C73F1969BE55004370AD /* MicroDown */,
 				A1809C1819589C20002B4F87 /* Models */,
 				A1809C14195897F8002B4F87 /* Controllers */,
 				A1809BF21958965F002B4F87 /* AppDelegate.h */,
@@ -165,6 +202,8 @@
 				A1809C161958984F002B4F87 /* NoteViewController.m */,
 				A1809C1C19589EF3002B4F87 /* NotesTableViewController.h */,
 				A1809C1D19589EF3002B4F87 /* NotesTableViewController.m */,
+				A197C71F1969BC5E004370AD /* MarkdownPreviewController.h */,
+				A197C7201969BC5E004370AD /* MarkdownPreviewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -176,6 +215,43 @@
 				A1809C1A19589C3A002B4F87 /* Note.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		A197C73F1969BE55004370AD /* MicroDown */ = {
+			isa = PBXGroup;
+			children = (
+				A197C7461969C26A004370AD /* Fragments */,
+				A197C7401969C254004370AD /* Document.h */,
+				A197C7411969C254004370AD /* Document.m */,
+				A197C7421969C254004370AD /* Parser.h */,
+				A197C7431969C254004370AD /* Parser.m */,
+			);
+			name = MicroDown;
+			sourceTree = "<group>";
+		};
+		A197C7461969C26A004370AD /* Fragments */ = {
+			isa = PBXGroup;
+			children = (
+				A1925E441969D15B005738B6 /* BaseFragment.h */,
+				A1925E451969D15B005738B6 /* BaseFragment.m */,
+				A1925E461969D15B005738B6 /* BlankLineFragment.h */,
+				A1925E471969D15B005738B6 /* BlankLineFragment.m */,
+				A1925E481969D15B005738B6 /* HeadingFragment.h */,
+				A1925E491969D15B005738B6 /* HeadingFragment.m */,
+				A1925E4A1969D15B005738B6 /* HorizontalFragment.h */,
+				A1925E4B1969D15B005738B6 /* HorizontalFragment.m */,
+				A1925E4C1969D15B005738B6 /* ParagraphFragment.h */,
+				A1925E4D1969D15B005738B6 /* ParagraphFragment.m */,
+				A1925E4E1969D15B005738B6 /* LinedHeadingFragment.h */,
+				A1925E4F1969D15B005738B6 /* LinedHeadingFragment.m */,
+				A1925E501969D15B005738B6 /* TextFragment.h */,
+				A1925E511969D15B005738B6 /* TextFragment.m */,
+				A1925E521969D15B005738B6 /* Fragments.h */,
+				A1925E531969D15B005738B6 /* Fragments.m */,
+				A1925E541969D15B005738B6 /* ListFragment.h */,
+				A1925E551969D15B005738B6 /* ListFragment.m */,
+			);
+			name = Fragments;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,11 +350,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A197C7451969C254004370AD /* Parser.m in Sources */,
 				A1809BF41958965F002B4F87 /* AppDelegate.m in Sources */,
 				A1809C171958984F002B4F87 /* NoteViewController.m in Sources */,
+				A1925E5A1969D15B005738B6 /* ParagraphFragment.m in Sources */,
 				A1809BF01958965F002B4F87 /* main.m in Sources */,
+				A1925E5B1969D15B005738B6 /* LinedHeadingFragment.m in Sources */,
+				A1925E5E1969D15B005738B6 /* ListFragment.m in Sources */,
+				A197C7441969C254004370AD /* Document.m in Sources */,
 				A1809C1E19589EF3002B4F87 /* NotesTableViewController.m in Sources */,
+				A1925E5C1969D15B005738B6 /* TextFragment.m in Sources */,
+				A1925E571969D15B005738B6 /* BlankLineFragment.m in Sources */,
+				A197C7211969BC5E004370AD /* MarkdownPreviewController.m in Sources */,
 				A1809C1B19589C3A002B4F87 /* Note.m in Sources */,
+				A1925E591969D15B005738B6 /* HorizontalFragment.m in Sources */,
+				A1925E5D1969D15B005738B6 /* Fragments.m in Sources */,
+				A1925E581969D15B005738B6 /* HeadingFragment.m in Sources */,
+				A1925E561969D15B005738B6 /* BaseFragment.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,6 +563,7 @@
 				A1809C0E1958965F002B4F87 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A1809C0F1958965F002B4F87 /* Build configuration list for PBXNativeTarget "NotesTests" */ = {
 			isa = XCConfigurationList;
@@ -483,6 +572,7 @@
 				A1809C111958965F002B4F87 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

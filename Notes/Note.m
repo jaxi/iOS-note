@@ -10,7 +10,6 @@
 
 @implementation Note
 
-
 - (instancetype) init
 {
     self = [super init];

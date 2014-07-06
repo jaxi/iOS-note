@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Note.h"
+#import "MarkdownPreviewController.h"
 
 @interface NoteViewController : UIViewController
 
