@@ -58,7 +58,7 @@ static NSString *delFormat = @"<del>%@</del>";
     if (self.parsed == YES) {
         return self.content;
     }
-
+    
     self.parsed = YES;
     [self plainConvert];
     
@@ -72,13 +72,15 @@ static NSString *delFormat = @"<del>%@</del>";
     
     [self convertInlineLink];
     [self convertReferenceLink];
-
+    
     self.content = [self replaceContextWithPattern:emailPattern withFormat:emailFormat];
     self.content = [self replaceContextWithPattern:autolinkPattern withFormat:autolinkFormat];
-
+    
     self.content = [self replaceContextWithPattern:delPattern withFormat:delFormat];
-    self.content = [self replaceContextWithPattern:boldPattern withFormat:boldFormat];
+    
     self.content = [self replaceContextWithPattern:italicPattern withFormat:italicFormat];
+    self.content = [self replaceContextWithPattern:boldPattern withFormat:boldFormat];
+    
 }
 
 - (void) convertInlineImage
