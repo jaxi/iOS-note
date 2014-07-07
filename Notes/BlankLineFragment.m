@@ -23,21 +23,13 @@
 
 -(NSString *) toHTML
 {
-    NSString *format = @"<br />";
-    self.content  = format;
+    return @"";
     
-    return self.content;
-
 }
 
 -(void) parse
 {
-    BOOL inblock = NO;
-    
-    if (inblock == NO) {
-        [self.document.elements addObject:self];
-    }
-    
+    [self.document.elements addObject:self];
 }
 
 @end

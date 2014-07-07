@@ -38,12 +38,9 @@
     
     [parser parse];
     
-    _htmlContent = [parser render];
+    _htmlContent = [NSString stringWithFormat:@"<style type='text/css'>@import url('markdown.css');</style>\n%@", [parser render]];
     
-    NSLog(@"%@", markDownContent);
-    NSLog(@"%@", _htmlContent);
-    
-    [(UIWebView *)self.view loadHTMLString:_htmlContent baseURL:nil];
+    [(UIWebView *)self.view loadHTMLString:_htmlContent baseURL:[NSURL fileURLWithPath: [[NSBundle mainBundle] resourcePath] isDirectory: YES]];
 }
 
 - (void)viewDidLoad
