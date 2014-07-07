@@ -40,8 +40,6 @@
         
         if (countOfBlankLineMatch > 0) {
             ++ _document.startLine;
-
-            NSLog(@"%@ blank", lineOfMD);
             
             BlankLineFragment *frag = [[BlankLineFragment alloc]
                                        initWithContent: lineOfMD
@@ -50,8 +48,6 @@
             [frag parse];
         }else if (countOfHeadingMatch > 0){
             ++ _document.startLine;
-            
-            NSLog(@"%@ heading", lineOfMD);
             
             HeadingFragment *frag = [[HeadingFragment alloc]
                                      initWithContent: lineOfMD
@@ -62,8 +58,6 @@
                    andDocument:_document]) {
             ++ _document.startLine;
             
-            NSLog(@"%@ linedheading", lineOfMD);
-            
             LinedHeadingFragment *frag = [[LinedHeadingFragment alloc]
                                           initWithContent:lineOfMD
                                           andDocument:_document];
@@ -73,16 +67,12 @@
         }else if ([HorizontalFragment isWithLine:lineOfMD andDocument:_document]){
             ++ _document.startLine;
             
-            NSLog(@"%@ hr", lineOfMD);
-            
             HorizontalFragment *frag = [[HorizontalFragment alloc]
                                         initWithContent:lineOfMD
                                         andDocument:_document];
             [frag parse];
         }else if ([ListFragment isListWithLine:lineOfMD andDocument:_document] == YES){
             ++ _document.startLine;
-            
-            NSLog(@"%@ ul ol", lineOfMD);
             
             TextFragment *frag = [[TextFragment alloc]
                                   initWithContent:[ListFragment getListContentByText:lineOfMD]
@@ -101,8 +91,6 @@
             }
         }else {
             ++ _document.startLine;
-
-            NSLog(@"%@ p", lineOfMD);
             
             TextFragment *frag = [[TextFragment alloc]
                                   initWithContent:lineOfMD
