@@ -128,6 +128,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A1404C4E196DD3CD00E4715A /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = iPad;
+			sourceTree = "<group>";
+		};
 		A1809BD71958965F002B4F87 = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +170,7 @@
 		A1809BE91958965F002B4F87 /* Notes */ = {
 			isa = PBXGroup;
 			children = (
+				A1404C4E196DD3CD00E4715A /* iPad */,
 				A197C73F1969BE55004370AD /* MicroDown */,
 				A1809C1819589C20002B4F87 /* Models */,
 				A1809C14195897F8002B4F87 /* Controllers */,
@@ -507,7 +515,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Notes/Notes-Prefix.pch";
 				INFOPLIST_FILE = "Notes/Notes-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -520,7 +530,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Notes/Notes-Prefix.pch";
 				INFOPLIST_FILE = "Notes/Notes-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

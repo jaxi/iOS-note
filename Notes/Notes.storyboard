@@ -69,23 +69,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YfY-vz-Nj8">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YfY-vz-Nj8">
                                 <rect key="frame" x="20" y="88" width="219" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="On8-DB-2Wi">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="On8-DB-2Wi">
                                 <rect key="frame" x="20" y="152" width="280" height="254"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="254" id="qfY-6t-5ia"/>
+                                </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mDk-k5-3vi">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mDk-k5-3vi">
                                 <rect key="frame" x="247" y="88" width="54" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="NRJ-oK-1E5"/>
+                                    <constraint firstAttribute="width" constant="54" id="Vhm-5O-mzL"/>
+                                </constraints>
                                 <state key="normal" title="Preview">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -95,6 +102,17 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mDk-k5-3vi" firstAttribute="leading" secondItem="YfY-vz-Nj8" secondAttribute="trailing" constant="20" id="Acp-oU-Y5y"/>
+                            <constraint firstItem="On8-DB-2Wi" firstAttribute="leading" secondItem="mAL-ba-gSQ" secondAttribute="leading" constant="20" id="PpC-Xo-s8y"/>
+                            <constraint firstAttribute="trailing" secondItem="mDk-k5-3vi" secondAttribute="trailing" constant="19" id="XXy-pw-i3p"/>
+                            <constraint firstAttribute="trailing" secondItem="On8-DB-2Wi" secondAttribute="trailing" constant="20" id="Y0b-5z-j50"/>
+                            <constraint firstItem="YfY-vz-Nj8" firstAttribute="leading" secondItem="mAL-ba-gSQ" secondAttribute="leading" constant="20" id="eOj-P9-FwU"/>
+                            <constraint firstItem="mDk-k5-3vi" firstAttribute="top" secondItem="XBr-p6-ndK" secondAttribute="bottom" constant="24" id="jc1-vE-j1c"/>
+                            <constraint firstItem="mDk-k5-3vi" firstAttribute="baseline" secondItem="YfY-vz-Nj8" secondAttribute="baseline" id="n2H-oB-xE3"/>
+                            <constraint firstItem="On8-DB-2Wi" firstAttribute="top" secondItem="mDk-k5-3vi" secondAttribute="bottom" constant="34" id="ryq-9X-8hO"/>
+                            <constraint firstItem="YfY-vz-Nj8" firstAttribute="top" secondItem="XBr-p6-ndK" secondAttribute="bottom" constant="24" id="zPH-DG-Jpt"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="4EU-o9-BGC">
                         <barButtonItem key="rightBarButtonItem" title="Done" id="1PT-NA-Hco">
