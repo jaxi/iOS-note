@@ -26,9 +26,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    self.navigationItem.title = self.note.title;
     
+    id delegate = [[UIApplication sharedApplication] delegate];
+    self.managedObjectContext = [delegate managedObjectContext];
+    
+    self.navigationItem.title = self.note.title;
+
     self.noteTitle.text = self.note.title;
     self.noteContent.text = self.note.content;
 }
@@ -39,6 +42,8 @@
     
     self.note.title = self.noteTitle.text;
     self.note.content = self.noteContent.text;
+    
+    [self.managedObjectContext save:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -69,4 +74,5 @@
 {
     [self.view endEditing:YES];
 }
+
 @end

@@ -18,4 +18,6 @@
 @property (nonatomic) BOOL newNote;
 @property (nonatomic) Note *note;
 
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+
 @end
