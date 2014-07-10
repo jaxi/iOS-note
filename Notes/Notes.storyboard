@@ -75,13 +75,10 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="On8-DB-2Wi">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="On8-DB-2Wi">
                                 <rect key="frame" x="20" y="152" width="280" height="254"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="254" id="qfY-6t-5ia"/>
-                                </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -111,6 +108,7 @@
                             <constraint firstItem="mDk-k5-3vi" firstAttribute="top" secondItem="XBr-p6-ndK" secondAttribute="bottom" constant="24" id="jc1-vE-j1c"/>
                             <constraint firstItem="mDk-k5-3vi" firstAttribute="baseline" secondItem="YfY-vz-Nj8" secondAttribute="baseline" id="n2H-oB-xE3"/>
                             <constraint firstItem="On8-DB-2Wi" firstAttribute="top" secondItem="mDk-k5-3vi" secondAttribute="bottom" constant="34" id="ryq-9X-8hO"/>
+                            <constraint firstItem="5k8-bQ-JgC" firstAttribute="top" secondItem="On8-DB-2Wi" secondAttribute="bottom" constant="20" id="weg-Hk-uqu"/>
                             <constraint firstItem="YfY-vz-Nj8" firstAttribute="top" secondItem="XBr-p6-ndK" secondAttribute="bottom" constant="24" id="zPH-DG-Jpt"/>
                         </constraints>
                     </view>

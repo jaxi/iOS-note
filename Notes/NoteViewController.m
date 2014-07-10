@@ -34,6 +34,16 @@
 
     self.noteTitle.text = self.note.title;
     self.noteContent.text = self.note.content;
+    
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(keyboardWillShow:)
+     name:UIKeyboardWillShowNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(keyboardWillDisappear:)
+     name:UIKeyboardWillHideNotification object:nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -73,6 +83,34 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [self.view endEditing:YES];
+}
+
+- (void)keyboardWillShow:(NSNotification *)notification
+{
+    NSDictionary *info = [notification userInfo];
+    CGSize keyboardSize = [info[UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    
+    UIEdgeInsets noteContentInset = self.noteContent.contentInset;
+    noteContentInset.bottom += keyboardSize.height;
+    self.noteContent.contentInset = noteContentInset;
+    
+    UIEdgeInsets noteContentScrollInset = self.noteContent.scrollIndicatorInsets;
+    noteContentScrollInset.bottom += keyboardSize.height;
+    self.noteContent.scrollIndicatorInsets = noteContentScrollInset;
+}
+
+- (void)keyboardWillDisappear:(NSNotification *)notification
+{
+    NSDictionary *info = [notification userInfo];
+    CGSize keyboardSize = [info[UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    
+    UIEdgeInsets noteContentInset = self.noteContent.contentInset;
+    noteContentInset.bottom -= keyboardSize.height;
+    self.noteContent.contentInset = noteContentInset;
+    
+    UIEdgeInsets noteContentScrollInset = self.noteContent.scrollIndicatorInsets;
+    noteContentScrollInset.bottom -= keyboardSize.height;
+    self.noteContent.scrollIndicatorInsets = noteContentScrollInset;
 }
 
 @end
