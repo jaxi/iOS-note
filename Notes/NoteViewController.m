@@ -35,15 +35,48 @@
     self.noteTitle.text = self.note.title;
     self.noteContent.text = self.note.content;
     
-    [[NSNotificationCenter defaultCenter]
+    [self.noteContent setDelegate:self];
+    
+    [self setToolbarItemsForKeyboard];
+    
+    [self setNotificationDelegate];
+}
+
+- (void)setNotificationDelegate
+{
+    NSNotificationCenter *notificationCenter =
+    [NSNotificationCenter defaultCenter];
+    
+    [notificationCenter
      addObserver:self
      selector:@selector(keyboardWillShow:)
      name:UIKeyboardWillShowNotification object:nil];
     
-    [[NSNotificationCenter defaultCenter]
+    [notificationCenter
      addObserver:self
      selector:@selector(keyboardWillDisappear:)
      name:UIKeyboardWillHideNotification object:nil];
+}
+
+- (void)setToolbarItemsForKeyboard
+{
+    UIToolbar* keyboardToolBar = [[UIToolbar alloc] init];
+    [keyboardToolBar sizeToFit];
+
+    UIBarButtonItem *imageInsertButton = [[UIBarButtonItem alloc]
+                                   initWithTitle:@"Insert Image"
+                                   style:UIBarButtonItemStyleBordered
+                                   target:self
+                                   action:@selector(insertImage:)];
+    
+    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc]
+                                   initWithTitle:@"Done"
+                                   style:UIBarButtonItemStyleDone
+                                   target:self
+                                   action:@selector(doneClicked:)];
+    
+    keyboardToolBar.items = @[doneButton, imageInsertButton];
+    self.noteContent.inputAccessoryView = keyboardToolBar;
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -82,6 +115,18 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    [self.view endEditing:YES];
+}
+
+- (IBAction)insertImage :(id)sender
+{
+    NSLog(@"Done done");
+    [self.view endEditing:YES];
+}
+
+- (IBAction)doneClicked :(id)sender
+{
+    NSLog(@"Done done");
     [self.view endEditing:YES];
 }
 
