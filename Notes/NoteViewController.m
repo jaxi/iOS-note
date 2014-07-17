@@ -75,13 +75,27 @@
                                           target:self
                                           action:@selector(takePicture:)];
     
+    
+    UIBarButtonItem *videoLibraryButton = [[UIBarButtonItem alloc]
+                                           initWithTitle:@"Load Video"
+                                           style:UIBarButtonItemStyleBordered
+                                           target:self
+                                           action:@selector(loadVideoFromLibrary:)];
+
+    UIBarButtonItem *videoTakingButton = [[UIBarButtonItem alloc]
+                                           initWithTitle:@"Take Video"
+                                           style:UIBarButtonItemStyleBordered
+                                           target:self
+                                           action:@selector(takeVideo:)];
+    
     UIBarButtonItem *doneButton = [[UIBarButtonItem alloc]
                                    initWithTitle:@"Done"
                                    style:UIBarButtonItemStyleDone
                                    target:self
                                    action:@selector(doneClicked:)];
     
-    keyboardToolBar.items = @[doneButton, imageLibraryButton, photoTakingButton];
+    keyboardToolBar.items = @[doneButton, imageLibraryButton,
+                              photoTakingButton, videoLibraryButton, videoTakingButton];
     
     self.noteContent.inputAccessoryView = keyboardToolBar;
 }
@@ -157,7 +171,20 @@
     [self.view endEditing:YES];
 }
 
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+- (IBAction)loadVideoFromLibrary:(id)sender
+{
+    NSLog(@"load video from library");
+    [self.view endEditing:YES];
+}
+
+- (IBAction)takeVideo:(id)sender
+{
+    NSLog(@"Take video...");
+    [self.view endEditing:YES];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker
+    didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
 
     NSUUID  *UUID = [NSUUID UUID];
