@@ -63,11 +63,17 @@
     UIToolbar* keyboardToolBar = [[UIToolbar alloc] init];
     [keyboardToolBar sizeToFit];
 
-    UIBarButtonItem *imageInsertButton = [[UIBarButtonItem alloc]
-                                   initWithTitle:@"Insert Image"
+    UIBarButtonItem *imageLibraryButton = [[UIBarButtonItem alloc]
+                                   initWithTitle:@"Load Picture"
                                    style:UIBarButtonItemStyleBordered
                                    target:self
-                                   action:@selector(insertImage:)];
+                                   action:@selector(loadPictureFromLibrary:)];
+
+    UIBarButtonItem *photoTakingButton = [[UIBarButtonItem alloc]
+                                          initWithTitle:@"Take Picture"
+                                          style:UIBarButtonItemStyleBordered
+                                          target:self
+                                          action:@selector(takePicture:)];
     
     UIBarButtonItem *doneButton = [[UIBarButtonItem alloc]
                                    initWithTitle:@"Done"
@@ -75,7 +81,8 @@
                                    target:self
                                    action:@selector(doneClicked:)];
     
-    keyboardToolBar.items = @[doneButton, imageInsertButton];
+    keyboardToolBar.items = @[doneButton, imageLibraryButton, photoTakingButton];
+    
     self.noteContent.inputAccessoryView = keyboardToolBar;
 }
 
@@ -118,16 +125,61 @@
     [self.view endEditing:YES];
 }
 
-- (IBAction)insertImage :(id)sender
+- (IBAction)takePicture :(id)sender
 {
-    NSLog(@"Done done");
-    [self.view endEditing:YES];
+
+    NSLog(@"Take a picture");
+    
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    
+    imagePicker.delegate = self;
+    
+    [self presentViewController:imagePicker animated:YES completion:NULL];
 }
+
+- (IBAction)loadPictureFromLibrary :(id)sender
+{
+    NSLog(@"Load A picture");
+    
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+
+    imagePicker.delegate = self;
+    
+    [self presentViewController:imagePicker animated:YES completion:NULL];
+}
+
 
 - (IBAction)doneClicked :(id)sender
 {
     NSLog(@"Done done");
     [self.view endEditing:YES];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+
+    NSUUID  *UUID = [NSUUID UUID];
+    NSString* stringUUID = [UUID UUIDString];
+    
+    UIImage *image = (UIImage *)[info valueForKey:UIImagePickerControllerOriginalImage];
+    NSData *imageData = UIImageJPEGRepresentation(image, 1.0);
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentPath = [paths objectAtIndex:0];
+
+    NSString *fileName = [NSString stringWithFormat:@"%@.jpg", stringUUID];
+    NSString *savePath = [documentPath stringByAppendingPathComponent:fileName];
+    [imageData writeToFile:savePath atomically:YES];
+    
+    NSString *markdownContent = [NSString stringWithFormat:@"![%@](Your Comment)", savePath];
+
+    NSRange cursorPosition = [self.noteContent selectedRange];
+    NSMutableString *targetContent = [[NSMutableString alloc] initWithString:[self.noteContent text]];
+    [targetContent insertString:markdownContent atIndex:cursorPosition.location];
+    [self.noteContent setText:targetContent];
+    [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 - (void)keyboardWillShow:(NSNotification *)notification

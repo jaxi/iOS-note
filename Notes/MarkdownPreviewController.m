@@ -40,7 +40,8 @@
     
     _htmlContent = [NSString stringWithFormat:@"<style type='text/css'>@import url('markdown.css');</style>\n%@", [parser render]];
     
-    [(UIWebView *)self.view loadHTMLString:_htmlContent baseURL:[NSURL fileURLWithPath: [[NSBundle mainBundle] resourcePath] isDirectory: YES]];
+    NSURL *baseURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]];
+    [(UIWebView *)self.view loadHTMLString:_htmlContent baseURL:baseURL];
 }
 
 - (void)viewDidLoad

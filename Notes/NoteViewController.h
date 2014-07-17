@@ -10,7 +10,7 @@
 #import "Note.h"
 #import "MarkdownPreviewController.h"
 
-@interface NoteViewController : UIViewController <UITextViewDelegate>
+@interface NoteViewController : UIViewController <UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (nonatomic, weak) IBOutlet UITextField *noteTitle;
 @property (nonatomic, weak) IBOutlet UITextView *noteContent;
