@@ -31,11 +31,7 @@
     id delegate = [[UIApplication sharedApplication] delegate];
     self.managedObjectContext = [delegate managedObjectContext];
     
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *note = [NSEntityDescription entityForName:@"Note" inManagedObjectContext:self.managedObjectContext];
-    
-    [fetchRequest setEntity:note];
-    self.notes = [NSMutableArray arrayWithArray:[self.managedObjectContext executeFetchRequest:fetchRequest error:nil]];
+    [self fetchNotes];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -58,6 +54,24 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [self.notes count];
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView beginUpdates];
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        Note *note = [self.notes objectAtIndex:indexPath.row];
+        [self.managedObjectContext deleteObject:note];
+        [self.managedObjectContext save:nil];
+        
+        [self.managedObjectContext
+         refreshObject:note mergeChanges:YES];
+        
+        [self fetchNotes];
+        
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath, nil] withRowAnimation:UITableViewRowAnimationTop];
+    }
+    [tableView endUpdates];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -88,4 +102,12 @@
     }
 }
 
+- (void)fetchNotes
+{
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *note = [NSEntityDescription entityForName:@"Note" inManagedObjectContext:self.managedObjectContext];
+    
+    [fetchRequest setEntity:note];
+    self.notes = [NSMutableArray arrayWithArray:[self.managedObjectContext executeFetchRequest:fetchRequest error:nil]];
+}
 @end
