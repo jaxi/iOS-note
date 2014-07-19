@@ -20,6 +20,10 @@ static NSString *inlineLinkFormat = @"<a href=\"%@\">%@</a>";
 static NSString *referenceLinkPattern = @"\\[(.+?)\\]\\s*\\[(.+?)\\]";
 static NSString *referenceLinkFormat = @"<a href=\"%@\">%@</a>";
 
+
+static NSString *youtubeVideoPattern = @"\\!v\\[(.+?)\\]\\s*\\[([0-9]+?)x([0-9]+?)\\]";
+static NSString *youtubeVideoFormat = @"<iframe width='%@' height='%@' src='%@' frameborder='0' allowfullscreen></iframe>";
+
 static NSString *inlineImagePattern = @"\\!\\[(.+?)\\]\\s*\\((.+?)\\)";
 static NSString *inlineImageFormat = @"<img src=\"%@\" alt=\"%@\" />";
 
@@ -67,6 +71,8 @@ static NSString *delFormat = @"<del>%@</del>";
 
 - (void) plainConvert
 {
+    [self convertYoutubeVideo];
+    
     [self convertInlineImage];
     [self convertReferenceImage];
     
@@ -146,4 +152,19 @@ static NSString *delFormat = @"<del>%@</del>";
                     withTemplate:[NSString stringWithFormat:referenceLinkFormat, @"$2", @"$1"]];
 }
 
+- (void) convertYoutubeVideo
+{
+    NSError *error = error;
+    
+    NSRegularExpression * regex = [NSRegularExpression
+                                   regularExpressionWithPattern:youtubeVideoPattern
+                                   options:0
+                                   error:&error];
+    
+    self.content = [regex
+                    stringByReplacingMatchesInString:self.content
+                    options:0
+                    range:NSMakeRange(0, [self.content length])
+                    withTemplate:[NSString stringWithFormat:youtubeVideoFormat, @"$2", @"$3", @"$1"]];
+}
 @end
