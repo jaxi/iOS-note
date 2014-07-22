@@ -12,7 +12,6 @@
 
 @interface NoteViewController : UIViewController <UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
-@property (nonatomic, weak) IBOutlet UITextField *noteTitle;
 @property (nonatomic, weak) IBOutlet UITextView *noteContent;
 
 @property (nonatomic) BOOL newNote;

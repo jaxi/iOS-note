@@ -32,7 +32,6 @@
     
     self.navigationItem.title = self.note.title;
 
-    self.noteTitle.text = self.note.title;
     self.noteContent.text = self.note.content;
     
     [self.noteContent setDelegate:self];
@@ -104,7 +103,7 @@
 {
     [super viewWillDisappear:animated];
     
-    self.note.title = self.noteTitle.text;
+    self.note.title = [self getPlainTitle:self.noteContent.text];
     self.note.content = self.noteContent.text;
     
     [self.managedObjectContext save:nil];
@@ -130,7 +129,7 @@
         MarkdownPreviewController *mpc = (MarkdownPreviewController *)segue.destinationViewController;
         
         [mpc setHtmlContentWithMarkdownContent:self.noteContent.text];
-        mpc.title = self.noteTitle.text;
+        mpc.title = [self getPlainTitle:self.note.content];
     }
 }
 
@@ -237,4 +236,30 @@
     self.noteContent.scrollIndicatorInsets = noteContentScrollInset;
 }
 
+- (NSString *)getPlainTitle: (NSString *)content
+{
+    
+    NSArray *contentArray = [content
+                              componentsSeparatedByString:@"\n"];
+    
+    for (NSString *markdownTitle in contentArray) {
+        Document *doc = [[Document alloc]
+                         initWithContent:markdownTitle];
+        
+        Parser *parser = [[Parser alloc] initWithDocument:doc];
+        [parser parse];
+        
+        NSString *title = [parser render];
+        NSRange r;
+        while ((r = [title rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound) {
+            title = [title stringByReplacingCharactersInRange:r withString:@""];
+        }
+        
+        if (title.length > 0) {
+            return title;
+        }
+    }
+    
+    return @"No Title";
+}
 @end
