@@ -79,6 +79,9 @@
                                 <state key="normal" title="Preview">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="AzV-BL-kXk" kind="push" identifier="NotePreview" id="aSP-sP-0v9"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Ax-az-xW6">
                                 <rect key="frame" x="40" y="86" width="240" height="396"/>

@@ -61,9 +61,9 @@ static NSString *h2Pattern = @"\\A-{3,}\\s*";
     }
     
     ParagraphFragment *paragraph = [self.document.elements lastObject];
-
+    
     TextFragment *element = [paragraph.children lastObject];
-
+    
     [paragraph removeLastChild];
     
     if ([paragraph.children count] == 0) {
