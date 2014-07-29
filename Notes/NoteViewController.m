@@ -128,8 +128,8 @@
     if ([segue.identifier isEqualToString:@"NotePreview"]) {
         MarkdownPreviewController *mpc = (MarkdownPreviewController *)segue.destinationViewController;
         
-        [mpc setHtmlContentWithMarkdownContent:self.noteContent.text];
         mpc.title = [self getPlainTitle:self.note.content];
+        [mpc setHtmlContentWithMarkdownContent:self.noteContent.text];
     }
 }
 
