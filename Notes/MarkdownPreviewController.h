@@ -11,8 +11,4 @@
 
 @interface MarkdownPreviewController : UIViewController
 
-@property (nonatomic, copy) NSString *htmlContent;
-
-- (void)setHtmlContentWithMarkdownContent:(NSString *)markDownContent;
-
 @end

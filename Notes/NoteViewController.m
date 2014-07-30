@@ -99,6 +99,15 @@
     self.noteContent.inputAccessoryView = keyboardToolBar;
 }
 
+- (dispatch_queue_t) renderingQueue
+{
+    if (!_renderingQueue) {
+        _renderingQueue = dispatch_queue_create("rendering queue", NULL);
+    }
+    
+    return _renderingQueue;
+}
+
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
@@ -128,8 +137,26 @@
     if ([segue.identifier isEqualToString:@"NotePreview"]) {
         MarkdownPreviewController *mpc = (MarkdownPreviewController *)segue.destinationViewController;
         
-        mpc.title = [self getPlainTitle:self.note.content];
-        [mpc setHtmlContentWithMarkdownContent:self.noteContent.text];
+        dispatch_async(self.renderingQueue, ^{
+            
+            NSString *title = [self getPlainTitle:self.note.content];
+            
+            Document *doc = [[Document alloc]
+                             initWithContent:self.noteContent.text];
+            Parser *parser = [[Parser alloc] initWithDocument:doc];
+            
+            [parser parse];
+            
+            NSString *htmlContent = [NSString stringWithFormat:@"<style type='text/css'>@import url('markdown.css');</style>\n%@", [parser render]];
+            
+            NSURL *baseURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                mpc.title = title;
+                [(UIWebView *)mpc.view
+                 loadHTMLString:htmlContent baseURL:baseURL];
+            });
+        });
     }
 }
 
@@ -166,7 +193,6 @@
 
 - (IBAction)doneClicked :(id)sender
 {
-    NSLog(@"Done done");
     [self.view endEditing:YES];
 }
 

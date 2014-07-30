@@ -19,4 +19,6 @@
 
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 
+@property (nonatomic, strong) dispatch_queue_t renderingQueue;
+
 @end
