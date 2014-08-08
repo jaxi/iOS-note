@@ -38,10 +38,10 @@
     
     [self setToolbarItemsForKeyboard];
     
-    [self setNotificationDelegate];
+    [self observeNotifications];
 }
 
-- (void)setNotificationDelegate
+- (void)observeNotifications
 {
     NSNotificationCenter *notificationCenter =
     [NSNotificationCenter defaultCenter];

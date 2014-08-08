@@ -55,7 +55,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="437-92-G06" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="938" y="638"/>
+            <point key="canvasLocation" x="932" y="382"/>
         </scene>
         <!--Note View Controller-->
         <scene sceneID="7BL-CI-VaX">
@@ -135,7 +135,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jVJ-dy-99N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1928" y="121"/>
+            <point key="canvasLocation" x="2018" y="382"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="taJ-cQ-Acd">
@@ -159,6 +159,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="B3S-Ma-3Vj"/>
+        <segue reference="zSw-i7-OYs"/>
     </inferredMetricsTieBreakers>
 </document>
