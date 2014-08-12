@@ -10,9 +10,28 @@
 
 static NSString *h1Pattern = @"\\A={3,}\\s*";
 static NSString *h2Pattern = @"\\A-{3,}\\s*";
+static NSRegularExpression *h1Regex;
+static NSRegularExpression *h2Regex;
 
 @implementation LinedHeadingFragment
 
++ (void)initialize
+{
+    if (!h1Regex) {
+        h1Regex = [NSRegularExpression
+                   regularExpressionWithPattern:h1Pattern
+                   options:0
+                   error:nil];
+    }
+    
+    if (!h2Regex) {
+        h2Regex = [NSRegularExpression
+                   regularExpressionWithPattern:h2Pattern
+                   options:0
+                   error:nil];
+    }
+    
+}
 - (instancetype) init
 {
     self = [super init];

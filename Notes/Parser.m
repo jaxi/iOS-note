@@ -40,7 +40,7 @@
         
         if (countOfBlankLineMatch > 0) {
             ++ _document.startLine;
-            
+
             BlankLineFragment *frag = [[BlankLineFragment alloc]
                                        initWithContent: lineOfMD
                                        andDocument:_document];
@@ -61,8 +61,6 @@
             LinedHeadingFragment *frag = [[LinedHeadingFragment alloc]
                                           initWithContent:lineOfMD
                                           andDocument:_document];
-            
-            
             [frag parse];
         }else if ([HorizontalFragment isWithLine:lineOfMD andDocument:_document]){
             ++ _document.startLine;
@@ -91,7 +89,7 @@
             }
         }else {
             ++ _document.startLine;
-            
+
             TextFragment *frag = [[TextFragment alloc]
                                   initWithContent:lineOfMD
                                   andDocument:_document];
@@ -115,11 +113,37 @@
 -(NSString *) render
 {
     if (_renderedString == nil) {
-        NSMutableArray *arrayOfRenderedString = [[NSMutableArray alloc] init];
-        for (BaseFragment *element in self.document.elements ) {
-            [arrayOfRenderedString addObject: [element toHTML]];
+        NSInteger elementsCount = self.document.elements.count;
+        NSInteger processorCount = [[NSProcessInfo processInfo] processorCount];
+
+        NSMutableArray *arrayOfRenderedString = [NSMutableArray arrayWithCapacity:elementsCount];
+        for (int i = 0; i < elementsCount; ++i) {
+            [arrayOfRenderedString addObject:@""];
         }
         
+        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
+        dispatch_group_t group = dispatch_group_create();
+        
+        NSInteger dispatchingBlock = elementsCount < processorCount ?
+            elementsCount : (elementsCount / processorCount);
+        NSInteger startingElementIndex = 0;
+        
+        while (startingElementIndex < elementsCount) {
+            dispatch_group_async(group, queue, ^{
+
+                for (NSInteger i = startingElementIndex;
+                     i < elementsCount && i < startingElementIndex + dispatchingBlock;
+                     ++ i) {
+
+                    arrayOfRenderedString[i] = [self.document.elements[i] toHTML];
+                }
+            });
+            startingElementIndex += dispatchingBlock;
+        }
+        
+        
+        dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
+
         _renderedString = [arrayOfRenderedString componentsJoinedByString:@"\n"];
     }
     
