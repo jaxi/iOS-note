@@ -147,11 +147,11 @@
             
             [parser parse];
             
-            NSString *htmlContent = [NSString stringWithFormat:@"<style type='text/css'>@import url('markdown.css');</style>\n%@", [parser render]];
-            
-            NSURL *baseURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]];
-            
             dispatch_async(dispatch_get_main_queue(), ^{
+                NSString *htmlContent = [NSString stringWithFormat:@"<style type='text/css'>@import url('markdown.css');</style>\n%@", [parser render]];
+                
+                NSURL *baseURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]];
+
                 mpc.title = title;
                 [(UIWebView *)mpc.view
                  loadHTMLString:htmlContent baseURL:baseURL];
