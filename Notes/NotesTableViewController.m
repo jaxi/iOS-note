@@ -32,6 +32,7 @@
     self.managedObjectContext = [delegate managedObjectContext];
     
     [self fetchNotes];
+    self.filteredNotesArray = [NSMutableArray arrayWithCapacity:[self.notes count]];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -43,9 +44,15 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NoteTitleTableViewCell" forIndexPath:indexPath];
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"NoteTableViewCell" forIndexPath:indexPath];
+    Note *note;
     
-    Note *note = [self.notes objectAtIndex:indexPath.row];
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        note = [self.filteredNotesArray objectAtIndex:indexPath.row];
+    }else{
+        note = [self.notes objectAtIndex:indexPath.row];
+    }
+    
     cell.textLabel.text = note.title;
     
     return cell;
@@ -53,7 +60,11 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.notes count];
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        return [self.filteredNotesArray count];
+    }else{
+        return [self.notes count];
+    }
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
@@ -91,6 +102,7 @@
         nvc.editing = NO;
     }
     else if ([segue.identifier isEqualToString:@"EditingNote"]){
+        NSLog(@"Editing Note...");
         NSIndexPath *ip = [self.tableView indexPathForCell:sender];
         
         Note *note = [self.notes objectAtIndex:ip.row];
@@ -110,4 +122,27 @@
     [fetchRequest setEntity:note];
     self.notes = [NSMutableArray arrayWithArray:[self.managedObjectContext executeFetchRequest:fetchRequest error:nil]];
 }
+
+-(void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope {
+    
+    [self.filteredNotesArray removeAllObjects];
+    // Filter the array using NSPredicate
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.title contains[c] %@",searchText];
+    self.filteredNotesArray = [NSMutableArray arrayWithArray:[self.notes filteredArrayUsingPredicate:predicate]];
+}
+
+-(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
+    [self filterContentForSearchText:searchString scope:
+     [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex]]];
+    
+    return YES;
+}
+
+-(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption {
+    [self filterContentForSearchText:self.searchDisplayController.searchBar.text scope:
+     [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:searchOption]];
+    
+    return YES;
+}
+
 @end

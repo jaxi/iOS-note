@@ -9,9 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "Note.h"
 
-@interface NotesTableViewController : UITableViewController
+@interface NotesTableViewController : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate>
 
 @property (nonatomic, strong) NSMutableArray *notes;
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 
+@property (strong,nonatomic) NSMutableArray *filteredNotesArray;
+@property IBOutlet UISearchBar *noteSearchBar;
 @end
