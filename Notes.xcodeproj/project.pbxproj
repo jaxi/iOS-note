@@ -22,19 +22,19 @@
 		A1809C1319589681002B4F87 /* Notes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1809C1219589681002B4F87 /* Notes.storyboard */; };
 		A1809C171958984F002B4F87 /* NoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1809C161958984F002B4F87 /* NoteViewController.m */; };
 		A1809C1E19589EF3002B4F87 /* NotesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1809C1D19589EF3002B4F87 /* NotesTableViewController.m */; };
+		A1878FA3199B7FE9007E19BC /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = A1878FA0199B7FE9007E19BC /* Document.m */; };
+		A1878FA4199B7FE9007E19BC /* Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = A1878FA2199B7FE9007E19BC /* Parser.m */; };
+		A1878FB7199B7FFB007E19BC /* BaseFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A1878FA6199B7FFB007E19BC /* BaseFragment.m */; };
+		A1878FB8199B7FFB007E19BC /* BlankLineFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A1878FA8199B7FFB007E19BC /* BlankLineFragment.m */; };
+		A1878FB9199B7FFB007E19BC /* HeadingFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A1878FAA199B7FFB007E19BC /* HeadingFragment.m */; };
+		A1878FBA199B7FFB007E19BC /* HorizontalFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A1878FAC199B7FFB007E19BC /* HorizontalFragment.m */; };
+		A1878FBB199B7FFB007E19BC /* ParagraphFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A1878FAE199B7FFB007E19BC /* ParagraphFragment.m */; };
+		A1878FBC199B7FFB007E19BC /* LinedHeadingFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A1878FB0199B7FFB007E19BC /* LinedHeadingFragment.m */; };
+		A1878FBD199B7FFB007E19BC /* TextFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A1878FB2199B7FFB007E19BC /* TextFragment.m */; };
+		A1878FBE199B7FFB007E19BC /* Fragments.m in Sources */ = {isa = PBXBuildFile; fileRef = A1878FB4199B7FFB007E19BC /* Fragments.m */; };
+		A1878FBF199B7FFB007E19BC /* ListFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A1878FB6199B7FFB007E19BC /* ListFragment.m */; };
 		A18A85B3196AFE3500E3FDB8 /* markdown.css in Resources */ = {isa = PBXBuildFile; fileRef = A18A85B2196AFE3500E3FDB8 /* markdown.css */; };
-		A1925E561969D15B005738B6 /* BaseFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A1925E451969D15B005738B6 /* BaseFragment.m */; };
-		A1925E571969D15B005738B6 /* BlankLineFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A1925E471969D15B005738B6 /* BlankLineFragment.m */; };
-		A1925E581969D15B005738B6 /* HeadingFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A1925E491969D15B005738B6 /* HeadingFragment.m */; };
-		A1925E591969D15B005738B6 /* HorizontalFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A1925E4B1969D15B005738B6 /* HorizontalFragment.m */; };
-		A1925E5A1969D15B005738B6 /* ParagraphFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A1925E4D1969D15B005738B6 /* ParagraphFragment.m */; };
-		A1925E5B1969D15B005738B6 /* LinedHeadingFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A1925E4F1969D15B005738B6 /* LinedHeadingFragment.m */; };
-		A1925E5C1969D15B005738B6 /* TextFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A1925E511969D15B005738B6 /* TextFragment.m */; };
-		A1925E5D1969D15B005738B6 /* Fragments.m in Sources */ = {isa = PBXBuildFile; fileRef = A1925E531969D15B005738B6 /* Fragments.m */; };
-		A1925E5E1969D15B005738B6 /* ListFragment.m in Sources */ = {isa = PBXBuildFile; fileRef = A1925E551969D15B005738B6 /* ListFragment.m */; };
 		A197C7211969BC5E004370AD /* MarkdownPreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A197C7201969BC5E004370AD /* MarkdownPreviewController.m */; };
-		A197C7441969C254004370AD /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = A197C7411969C254004370AD /* Document.m */; };
-		A197C7451969C254004370AD /* Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = A197C7431969C254004370AD /* Parser.m */; };
 		A19BDD75196C98EF00FF9D89 /* Notes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A19BDD73196C98EF00FF9D89 /* Notes.xcdatamodeld */; };
 		A19BDD7B196C9DE000FF9D89 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = A19BDD7A196C9DE000FF9D89 /* Note.m */; };
 		A1E0E7AC196C540100094C28 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1E0E7AB196C540100094C28 /* CoreData.framework */; };
@@ -72,31 +72,31 @@
 		A1809C161958984F002B4F87 /* NoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteViewController.m; sourceTree = "<group>"; };
 		A1809C1C19589EF3002B4F87 /* NotesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotesTableViewController.h; sourceTree = "<group>"; };
 		A1809C1D19589EF3002B4F87 /* NotesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotesTableViewController.m; sourceTree = "<group>"; };
+		A1878F9F199B7FE9007E19BC /* Document.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Document.h; sourceTree = "<group>"; };
+		A1878FA0199B7FE9007E19BC /* Document.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Document.m; sourceTree = "<group>"; };
+		A1878FA1199B7FE9007E19BC /* Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parser.h; sourceTree = "<group>"; };
+		A1878FA2199B7FE9007E19BC /* Parser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Parser.m; sourceTree = "<group>"; };
+		A1878FA5199B7FFB007E19BC /* BaseFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseFragment.h; sourceTree = "<group>"; };
+		A1878FA6199B7FFB007E19BC /* BaseFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseFragment.m; sourceTree = "<group>"; };
+		A1878FA7199B7FFB007E19BC /* BlankLineFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlankLineFragment.h; sourceTree = "<group>"; };
+		A1878FA8199B7FFB007E19BC /* BlankLineFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlankLineFragment.m; sourceTree = "<group>"; };
+		A1878FA9199B7FFB007E19BC /* HeadingFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeadingFragment.h; sourceTree = "<group>"; };
+		A1878FAA199B7FFB007E19BC /* HeadingFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeadingFragment.m; sourceTree = "<group>"; };
+		A1878FAB199B7FFB007E19BC /* HorizontalFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalFragment.h; sourceTree = "<group>"; };
+		A1878FAC199B7FFB007E19BC /* HorizontalFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizontalFragment.m; sourceTree = "<group>"; };
+		A1878FAD199B7FFB007E19BC /* ParagraphFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParagraphFragment.h; sourceTree = "<group>"; };
+		A1878FAE199B7FFB007E19BC /* ParagraphFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParagraphFragment.m; sourceTree = "<group>"; };
+		A1878FAF199B7FFB007E19BC /* LinedHeadingFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinedHeadingFragment.h; sourceTree = "<group>"; };
+		A1878FB0199B7FFB007E19BC /* LinedHeadingFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinedHeadingFragment.m; sourceTree = "<group>"; };
+		A1878FB1199B7FFB007E19BC /* TextFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFragment.h; sourceTree = "<group>"; };
+		A1878FB2199B7FFB007E19BC /* TextFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFragment.m; sourceTree = "<group>"; };
+		A1878FB3199B7FFB007E19BC /* Fragments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fragments.h; sourceTree = "<group>"; };
+		A1878FB4199B7FFB007E19BC /* Fragments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fragments.m; sourceTree = "<group>"; };
+		A1878FB5199B7FFB007E19BC /* ListFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListFragment.h; sourceTree = "<group>"; };
+		A1878FB6199B7FFB007E19BC /* ListFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListFragment.m; sourceTree = "<group>"; };
 		A18A85B2196AFE3500E3FDB8 /* markdown.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = markdown.css; sourceTree = "<group>"; };
-		A1925E441969D15B005738B6 /* BaseFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseFragment.h; sourceTree = "<group>"; };
-		A1925E451969D15B005738B6 /* BaseFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseFragment.m; sourceTree = "<group>"; };
-		A1925E461969D15B005738B6 /* BlankLineFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlankLineFragment.h; sourceTree = "<group>"; };
-		A1925E471969D15B005738B6 /* BlankLineFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlankLineFragment.m; sourceTree = "<group>"; };
-		A1925E481969D15B005738B6 /* HeadingFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeadingFragment.h; sourceTree = "<group>"; };
-		A1925E491969D15B005738B6 /* HeadingFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeadingFragment.m; sourceTree = "<group>"; };
-		A1925E4A1969D15B005738B6 /* HorizontalFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalFragment.h; sourceTree = "<group>"; };
-		A1925E4B1969D15B005738B6 /* HorizontalFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizontalFragment.m; sourceTree = "<group>"; };
-		A1925E4C1969D15B005738B6 /* ParagraphFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParagraphFragment.h; sourceTree = "<group>"; };
-		A1925E4D1969D15B005738B6 /* ParagraphFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParagraphFragment.m; sourceTree = "<group>"; };
-		A1925E4E1969D15B005738B6 /* LinedHeadingFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinedHeadingFragment.h; sourceTree = "<group>"; };
-		A1925E4F1969D15B005738B6 /* LinedHeadingFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinedHeadingFragment.m; sourceTree = "<group>"; };
-		A1925E501969D15B005738B6 /* TextFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFragment.h; sourceTree = "<group>"; };
-		A1925E511969D15B005738B6 /* TextFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFragment.m; sourceTree = "<group>"; };
-		A1925E521969D15B005738B6 /* Fragments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fragments.h; sourceTree = "<group>"; };
-		A1925E531969D15B005738B6 /* Fragments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fragments.m; sourceTree = "<group>"; };
-		A1925E541969D15B005738B6 /* ListFragment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListFragment.h; sourceTree = "<group>"; };
-		A1925E551969D15B005738B6 /* ListFragment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListFragment.m; sourceTree = "<group>"; };
 		A197C71F1969BC5E004370AD /* MarkdownPreviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarkdownPreviewController.h; sourceTree = "<group>"; };
 		A197C7201969BC5E004370AD /* MarkdownPreviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarkdownPreviewController.m; sourceTree = "<group>"; };
-		A197C7401969C254004370AD /* Document.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Document.h; sourceTree = "<group>"; };
-		A197C7411969C254004370AD /* Document.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Document.m; sourceTree = "<group>"; };
-		A197C7421969C254004370AD /* Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parser.h; sourceTree = "<group>"; };
-		A197C7431969C254004370AD /* Parser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Parser.m; sourceTree = "<group>"; };
 		A19BDD74196C98EF00FF9D89 /* Notes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Notes.xcdatamodel; sourceTree = "<group>"; };
 		A19BDD79196C9DE000FF9D89 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
 		A19BDD7A196C9DE000FF9D89 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
@@ -247,11 +247,11 @@
 		A197C73F1969BE55004370AD /* MicroDown */ = {
 			isa = PBXGroup;
 			children = (
+				A1878F9F199B7FE9007E19BC /* Document.h */,
+				A1878FA0199B7FE9007E19BC /* Document.m */,
+				A1878FA1199B7FE9007E19BC /* Parser.h */,
+				A1878FA2199B7FE9007E19BC /* Parser.m */,
 				A197C7461969C26A004370AD /* Fragments */,
-				A197C7401969C254004370AD /* Document.h */,
-				A197C7411969C254004370AD /* Document.m */,
-				A197C7421969C254004370AD /* Parser.h */,
-				A197C7431969C254004370AD /* Parser.m */,
 			);
 			name = MicroDown;
 			sourceTree = "<group>";
@@ -259,24 +259,24 @@
 		A197C7461969C26A004370AD /* Fragments */ = {
 			isa = PBXGroup;
 			children = (
-				A1925E441969D15B005738B6 /* BaseFragment.h */,
-				A1925E451969D15B005738B6 /* BaseFragment.m */,
-				A1925E461969D15B005738B6 /* BlankLineFragment.h */,
-				A1925E471969D15B005738B6 /* BlankLineFragment.m */,
-				A1925E481969D15B005738B6 /* HeadingFragment.h */,
-				A1925E491969D15B005738B6 /* HeadingFragment.m */,
-				A1925E4A1969D15B005738B6 /* HorizontalFragment.h */,
-				A1925E4B1969D15B005738B6 /* HorizontalFragment.m */,
-				A1925E4C1969D15B005738B6 /* ParagraphFragment.h */,
-				A1925E4D1969D15B005738B6 /* ParagraphFragment.m */,
-				A1925E4E1969D15B005738B6 /* LinedHeadingFragment.h */,
-				A1925E4F1969D15B005738B6 /* LinedHeadingFragment.m */,
-				A1925E501969D15B005738B6 /* TextFragment.h */,
-				A1925E511969D15B005738B6 /* TextFragment.m */,
-				A1925E521969D15B005738B6 /* Fragments.h */,
-				A1925E531969D15B005738B6 /* Fragments.m */,
-				A1925E541969D15B005738B6 /* ListFragment.h */,
-				A1925E551969D15B005738B6 /* ListFragment.m */,
+				A1878FA5199B7FFB007E19BC /* BaseFragment.h */,
+				A1878FA6199B7FFB007E19BC /* BaseFragment.m */,
+				A1878FA7199B7FFB007E19BC /* BlankLineFragment.h */,
+				A1878FA8199B7FFB007E19BC /* BlankLineFragment.m */,
+				A1878FA9199B7FFB007E19BC /* HeadingFragment.h */,
+				A1878FAA199B7FFB007E19BC /* HeadingFragment.m */,
+				A1878FAB199B7FFB007E19BC /* HorizontalFragment.h */,
+				A1878FAC199B7FFB007E19BC /* HorizontalFragment.m */,
+				A1878FAD199B7FFB007E19BC /* ParagraphFragment.h */,
+				A1878FAE199B7FFB007E19BC /* ParagraphFragment.m */,
+				A1878FAF199B7FFB007E19BC /* LinedHeadingFragment.h */,
+				A1878FB0199B7FFB007E19BC /* LinedHeadingFragment.m */,
+				A1878FB1199B7FFB007E19BC /* TextFragment.h */,
+				A1878FB2199B7FFB007E19BC /* TextFragment.m */,
+				A1878FB3199B7FFB007E19BC /* Fragments.h */,
+				A1878FB4199B7FFB007E19BC /* Fragments.m */,
+				A1878FB5199B7FFB007E19BC /* ListFragment.h */,
+				A1878FB6199B7FFB007E19BC /* ListFragment.m */,
 			);
 			name = Fragments;
 			sourceTree = "<group>";
@@ -378,24 +378,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A197C7451969C254004370AD /* Parser.m in Sources */,
+				A1878FBB199B7FFB007E19BC /* ParagraphFragment.m in Sources */,
+				A1878FBF199B7FFB007E19BC /* ListFragment.m in Sources */,
 				A1809BF41958965F002B4F87 /* AppDelegate.m in Sources */,
+				A1878FBD199B7FFB007E19BC /* TextFragment.m in Sources */,
+				A1878FBC199B7FFB007E19BC /* LinedHeadingFragment.m in Sources */,
 				A1809C171958984F002B4F87 /* NoteViewController.m in Sources */,
-				A1925E5A1969D15B005738B6 /* ParagraphFragment.m in Sources */,
+				A1878FBA199B7FFB007E19BC /* HorizontalFragment.m in Sources */,
+				A1878FBE199B7FFB007E19BC /* Fragments.m in Sources */,
 				A1809BF01958965F002B4F87 /* main.m in Sources */,
-				A1925E5B1969D15B005738B6 /* LinedHeadingFragment.m in Sources */,
-				A1925E5E1969D15B005738B6 /* ListFragment.m in Sources */,
 				A19BDD75196C98EF00FF9D89 /* Notes.xcdatamodeld in Sources */,
-				A197C7441969C254004370AD /* Document.m in Sources */,
+				A1878FB9199B7FFB007E19BC /* HeadingFragment.m in Sources */,
+				A1878FA3199B7FE9007E19BC /* Document.m in Sources */,
 				A19BDD7B196C9DE000FF9D89 /* Note.m in Sources */,
+				A1878FB7199B7FFB007E19BC /* BaseFragment.m in Sources */,
 				A1809C1E19589EF3002B4F87 /* NotesTableViewController.m in Sources */,
-				A1925E5C1969D15B005738B6 /* TextFragment.m in Sources */,
-				A1925E571969D15B005738B6 /* BlankLineFragment.m in Sources */,
+				A1878FB8199B7FFB007E19BC /* BlankLineFragment.m in Sources */,
+				A1878FA4199B7FE9007E19BC /* Parser.m in Sources */,
 				A197C7211969BC5E004370AD /* MarkdownPreviewController.m in Sources */,
-				A1925E591969D15B005738B6 /* HorizontalFragment.m in Sources */,
-				A1925E5D1969D15B005738B6 /* Fragments.m in Sources */,
-				A1925E581969D15B005738B6 /* HeadingFragment.m in Sources */,
-				A1925E561969D15B005738B6 /* BaseFragment.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

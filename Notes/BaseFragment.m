@@ -45,15 +45,8 @@
     return self;
 }
 
-- (NSString *) replaceContextWithPattern: (NSString *)pattern withFormat: (NSString *)format
+- (NSString *) replaceContextWithRegex: (NSRegularExpression *)regex withFormat: (NSString *)format
 {
-    NSError *error = error;
-    
-    NSRegularExpression * regex = [NSRegularExpression
-                                   regularExpressionWithPattern:pattern
-                                   options:0
-                                   error:&error];
-    
     return [regex
             stringByReplacingMatchesInString:self.content
             options:0
