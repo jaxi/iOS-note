@@ -28,10 +28,14 @@
 {
     [super viewDidLoad];
     
+    // Delegate the managedObjectContext from main thread
     id delegate = [[UIApplication sharedApplication] delegate];
     self.managedObjectContext = [delegate managedObjectContext];
     
+    // Fetching the notes' data from database
     [self fetchNotes];
+    
+    // Init the searching result array with the capacity of the count of the node
     self.filteredNotesArray = [NSMutableArray arrayWithCapacity:[self.notes count]];
 }
 
@@ -39,14 +43,21 @@
 {
     [super viewWillAppear:animated];
     
+    // Refresh the database adaptor manually,
+    // since the life cycle has not ended
     [self.tableView reloadData];
 }
 
+/*
+ * Table cell delegation
+ */
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    // Fetching the cached unused table view cells
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"NoteTableViewCell" forIndexPath:indexPath];
     Note *note;
     
+    // Search result or all content
     if (tableView == self.searchDisplayController.searchResultsTableView) {
         note = [self.filteredNotesArray objectAtIndex:indexPath.row];
     }else{
@@ -58,6 +69,10 @@
     return cell;
 }
 
+/*
+ * Table's number of rows delegation
+ */
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (tableView == self.searchDisplayController.searchResultsTableView) {
@@ -67,6 +82,9 @@
     }
 }
 
+/*
+ * Handle the delete action
+ */
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView beginUpdates];
@@ -85,6 +103,9 @@
     [tableView endUpdates];
 }
 
+/*
+ * Receive view changing messages.
+ */
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"NewNote"]) {
@@ -114,6 +135,7 @@
     }
 }
 
+// Fetching the data from db
 - (void)fetchNotes
 {
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
@@ -123,6 +145,7 @@
     self.notes = [NSMutableArray arrayWithArray:[self.managedObjectContext executeFetchRequest:fetchRequest error:nil]];
 }
 
+// Searching functionality
 -(void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope {
     
     [self.filteredNotesArray removeAllObjects];
@@ -131,6 +154,7 @@
     self.filteredNotesArray = [NSMutableArray arrayWithArray:[self.notes filteredArrayUsingPredicate:predicate]];
 }
 
+// Searching functionality
 -(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
     [self filterContentForSearchText:searchString scope:
      [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex]]];
@@ -138,6 +162,7 @@
     return YES;
 }
 
+// Delegate the searching display controller to the itself
 -(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption {
     [self filterContentForSearchText:self.searchDisplayController.searchBar.text scope:
      [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:searchOption]];
